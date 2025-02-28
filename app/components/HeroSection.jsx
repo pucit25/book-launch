@@ -71,7 +71,7 @@ export default function Hero() {
           international conventions and procedures governing the various stages of a contract for the
           international carriage of goods by sea.
         </p>
-        <p className="launch text-[#B04632] text-[20px] md:text-[40px] font-medium">
+        <p className="launch text-[#B04632] text-[24px] md:text-[40px] font-medium">
           Launching Soon...
         </p>
       </motion.div>

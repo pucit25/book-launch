@@ -26,10 +26,10 @@ export default function Testimonials() {
         {testimonials.map((testimonial, index) => (
           <div
             key={index}
-            className="bg-white shadow-lg rounded-lg p-6 md:p-8 mb-8 border border-gray-200"
+            className="bg-[#fff] shadow-lg rounded-[16px] p-6 md:p-8 mb-8 border border-[D0D5DD]"
           >
             {/* Full text on desktop, truncated on mobile */}
-            <p className="text-[16px] md:text-[18px] text-[#54504D] leading-[150%] md:line-clamp-none line-clamp-3">
+            <p className="text-[16px] md:text-[18px] text-[#344054] leading-[150%] md:line-clamp-none line-clamp-3">
               {testimonial.quote}
             </p>
 
@@ -37,19 +37,19 @@ export default function Testimonials() {
             <div className="md:hidden">
               <button
                 onClick={() => setSelectedTestimonial(testimonial)}
-                className="text-[#7F5283] font-semibold mt-2 inline-block"
+                className="text-[#344054] font-semibold mt-2 inline-block"
               >
                 Read More
               </button>
             </div>
 
             {/* Author details */}
-            <p className="mt-4 font-bold text-[18px] md:text-[20px] text-[#333]">
+            <p className="mt-4 font-bold text-[18px] md:text-[20px] text-[#344054]">
               {testimonial.author}
             </p>
-            <p className="text-[16px] font-medium text-[#54504D]">{testimonial.position}</p>
+            <p className="text-[16px] font-medium text-[#000000]">{testimonial.position}</p>
             {testimonial.extraTitle && (
-              <p className="text-[16px] font-medium text-[#54504D]">{testimonial.extraTitle}</p>
+              <p className="text-[16px] font-medium text-[#1D2739]">{testimonial.extraTitle}</p>
             )}
           </div>
         ))}

@@ -1,10 +1,12 @@
-"use client"
+"use client";
+
 import { useEffect, useState } from "react";
 import HeroSection from "./components/HeroSection";
 import HeroSecond from "./components/HeroSecond";
 import About from "./components/AboutSection";
 import Testimonials from "./components/testimonialsSection";
 import ComingSoon from "./components/ComigSoon";
+import AnimatedSection from "./components/AnimatedSection"; // NEW Component for scroll animations
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
@@ -16,11 +18,19 @@ export default function Home() {
 
   return (
     <div className="min-h-screen flex flex-col">
-      <HeroSection />
-      <HeroSecond />
-      <About />
-      <Testimonials />
-      <ComingSoon/>
+      <HeroSection />  {/* No animation */}
+      <AnimatedSection>
+        <HeroSecond />
+      </AnimatedSection>
+      <AnimatedSection>
+        <About />
+      </AnimatedSection>
+      <AnimatedSection>
+        <Testimonials />
+      </AnimatedSection>
+      <AnimatedSection>
+        <ComingSoon />
+      </AnimatedSection>
     </div>
   );
 }

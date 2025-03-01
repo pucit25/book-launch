@@ -1,12 +1,11 @@
 "use client";
-import { lazy, Suspense } from "react";
+
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
-
-const Image = lazy(() => import("next/image"));
 
 const books = [
   { id: 1, src: "/assets/mfon-usoro-book-cover.webp", alt: "Book Cover 1" },
@@ -17,41 +16,40 @@ export default function Hero() {
   return (
     <section className="w-full min-h-screen flex flex-col md:flex-row items-center justify-around px-4 md:px-16 pb-12 bg-gradient-to-r from-[#FDF7F3] via-[#FAE4DA] to-[#E3EAF2]">
       {/* Left Side - Swiper Carousel */}
-      <motion.div 
-        initial={{ opacity: 0, x: -50 }} 
-        animate={{ opacity: 1, x: 0 }}  
-        transition={{ duration: 0.8 }}
+      <motion.div
+        initial={{ opacity: 0, x: -30 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.6 }} // Faster animation
         className="relative w-[368px] flex flex-col items-center p-6"
       >
         <Swiper
           modules={[Pagination, Autoplay]}
           slidesPerView={1}
           loop={true}
-          autoplay={{ delay: 3000, disableOnInteraction: false }}
+          autoplay={{ delay: 2500, disableOnInteraction: false }} // Faster slide transition
           pagination={{ clickable: true }}
           className="w-full h-[547px]"
         >
           {books.map((book) => (
             <SwiperSlide key={book.id} className="flex justify-center">
-              <Suspense fallback={<div className="w-full h-[547px] bg-gray-200 animate-pulse" />}>
-                <Image
-                  src={book.src}
-                  alt={book.alt}
-                  width={368}
-                  height={547}
-                  className="shadow-lg rounded-lg object-cover flex-shrink-0 w-full h-[547px]"
-                />
-              </Suspense>
+              <Image
+                src={book.src}
+                alt={book.alt}
+                width={368}
+                height={547}
+                priority // Forces LCP element to load faster
+                className="shadow-lg rounded-lg object-cover flex-shrink-0 w-full h-[547px]"
+              />
             </SwiperSlide>
           ))}
         </Swiper>
       </motion.div>
 
       {/* Right Side - Text Content */}
-      <motion.div 
-        initial={{ opacity: 0, x: 50 }} 
-        animate={{ opacity: 1, x: 0 }} 
-        transition={{ duration: 0.8, delay: 0.3 }}
+      <motion.div
+        initial={{ opacity: 0, x: 30 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.6, delay: 0.1 }} // Reduced delay
         className="w-full md:w-[700px] text-left mt-10 md:mt-0 space-y-4"
       >
         <h1 className="text-[#1B1816] text-[32px] md:text-[64px] w-full leading-tight font-normal font-[RobotoSerif]">

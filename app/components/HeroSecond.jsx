@@ -45,7 +45,7 @@ export default function HeroSecond() {
           this exceptional work.
         </p>
         <p className="mt-4 font-bold text-[18px] md:text-[20px]">
-          HON. JUSTICE KUDIRAT M.O. KEKERE-EKUN, CJN, CFR
+          HON. JUSTICE KUDIRAT M.O. KEKERE-EKUN, CJN, GCON.
         </p>
         <p className="text-[16px] font-medium text-[#54504D]">Chief Justice of Nigeria</p>
 

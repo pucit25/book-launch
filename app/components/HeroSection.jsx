@@ -44,7 +44,7 @@ export default function Hero() {
                 height={547}
                 priority
                 fetchPriority="high"
-                className="shadow-lg object-cover flex-shrink-0 w-full h-[547px]"
+                className="shadow-lg object-cover flex-shrink-0 w-auto h-[547px]"
               />
             </SwiperSlide>
           ))}

@@ -5,8 +5,10 @@ import Link from "next/link";
 import { FaSearch } from "react-icons/fa";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper/modules";
+import { IoChevronDownOutline } from "react-icons/io5"; // Dropdown icon
 import "swiper/css";
 import "swiper/css/pagination";
+import Locations from "@/app/components/OurLocations";
 
 // Sample book data with slug
 const books = [
@@ -28,6 +30,7 @@ const categories = [
 const BooksPage = () => {
   const [search, setSearch] = useState("");
   const [activeCategory, setActiveCategory] = useState("all");
+  const [dropdownOpen, setDropdownOpen] = useState(false); // State for mobile dropdown
 
   // Filter books based on active category and search
   const filteredBooks = books.filter(
@@ -45,8 +48,35 @@ const BooksPage = () => {
 
       {/* Tabs & Search */}
       <div className="flex flex-col md:flex-row items-center justify-between px-6 md:px-16 pb-8">
-        {/* Category Tabs */}
-        <div className="flex space-x-6 text-gray-600">
+        {/* ✅ Mobile Dropdown Filter */}
+        <div className="relative w-full md:hidden">
+          <button
+            onClick={() => setDropdownOpen(!dropdownOpen)}
+            className="flex items-center justify-between w-full px-4 py-2 border border-gray-300 rounded-md text-gray-600 bg-white"
+          >
+            {categories.find((c) => c.value === activeCategory)?.label}
+            <IoChevronDownOutline className="text-lg" />
+          </button>
+          {dropdownOpen && (
+            <ul className="absolute left-0 right-0 mt-2 bg-white border border-gray-300 rounded-md shadow-lg z-10">
+              {categories.map(({ label, value }) => (
+                <li
+                  key={value}
+                  onClick={() => {
+                    setActiveCategory(value);
+                    setDropdownOpen(false);
+                  }}
+                  className="px-4 py-2 text-gray-600 hover:bg-gray-100 cursor-pointer"
+                >
+                  {label}
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
+
+        {/* ✅ Desktop Tabs */}
+        <div className="hidden md:flex space-x-6 text-gray-600">
           {categories.map(({ label, value }) => (
             <span
               key={value}
@@ -108,6 +138,9 @@ const BooksPage = () => {
           No results found for "{search}" in {categories.find((c) => c.value === activeCategory)?.label}.
         </p>
       )}
+      <div className="mt-12">
+        <Locations />
+      </div>
     </main>
   );
 };

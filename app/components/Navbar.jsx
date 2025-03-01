@@ -66,7 +66,7 @@ export default function Navbar() {
             {name}
           </Link>
         ))}
-        <div className="launch bg-[#FFD4A3] text-[#5C3100] px-[32px] py-[20px] text-[14px] font-medium leading-[128%]">
+        <div className="bg-[#FFD4A3] text-[#5C3100] px-[32px] py-[20px] text-[14px] font-medium leading-[128%]">
           FIND OUT MORE
         </div>
       </div>

@@ -73,16 +73,20 @@ const EventsPage = () => {
         />
 
         {/* Filter Dropdown */}
+        <div className="relative w-full md:w-[200px]">
         <select
-          value={filter}
-          onChange={(e) => setFilter(e.target.value)}
-          className="border border-gray-300 text-gray-700 px-4 py-2 w-full md:w-[200px] rounded-md focus:ring focus:ring-[#FFA947]"
+            value={filter}
+            onChange={(e) => setFilter(e.target.value)}
+            className="border border-gray-300 text-gray-700 px-4 py-2 w-full rounded-md focus:ring focus:ring-[#FFA947] appearance-none"
         >
-          <option value="all">All Events</option>
-          <option value="past">Past Events</option>
-          <option value="current">Today</option>
-          <option value="upcoming">Upcoming Events</option>
+            <option value="all">All Events</option>
+            <option value="past">Past Events</option>
+            <option value="current">Today</option>
+            <option value="upcoming">Upcoming Events</option>
         </select>
+  <span className="absolute right-4 top-3 text-gray-500 pointer-events-none">▼</span>
+</div>
+
       </section>
 
       {/* Events Grid */}

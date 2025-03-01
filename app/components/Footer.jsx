@@ -6,7 +6,7 @@ export default function Footer() {
         <div className="py-6">
           <h3 className="text-[#54504D] font-medium mb-2 text-lg">Menu</h3>
           <ul className="space-y-2">
-            {["About", "Books", "Events", "Contact Us"].map((item, index) => (
+            {["About", "Publications", "Events", "Contact Us"].map((item, index) => (
               <li key={index}>
                 <a href={`/${item.toLowerCase().replace(/\s+/g, "-")}`} className="hover:text-[#CC342B] transition">
                   {item}

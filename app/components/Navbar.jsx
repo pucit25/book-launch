@@ -26,7 +26,7 @@ export default function Navbar() {
       {/* Desktop Nav Links */}
       <div className="hidden md:flex items-center flex-grow justify-end">
         <div className="flex border border-[#E0E0E0] overflow-hidden w-[600px]">
-          {["About", "Books", "Publications", "Events", "Contact Us"].map((name, index) => (
+          {["About", "Publications", "Events", "Contact"].map((name, index) => (
             <Link
               key={index}
               href={`/${name.toLowerCase().replace(/\s/g, "")}`}
@@ -56,7 +56,7 @@ export default function Navbar() {
           isOpen ? "translate-x-0" : "-translate-x-full"
         }`}
       >
-        {["About", "Books", "Publications", "Events", "Contact Us"].map((name, index) => (
+        {["About", "Publications", "Events", "Contact"].map((name, index) => (
           <Link
             key={index}
             href={`/${name.toLowerCase().replace(/\s/g, "")}`}

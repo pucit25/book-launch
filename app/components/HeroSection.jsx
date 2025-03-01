@@ -38,13 +38,13 @@ export default function Hero() {
           {books.map((book) => (
             <SwiperSlide key={book.id} className="flex justify-center">
               <Image
-                src="/assets/mfon-usoro-book-cover.webp"
+                src={book.src}
                 alt="Book Cover 1"
                 width={368}
                 height={547}
                 priority
                 fetchPriority="high"
-                className="shadow-lg rounded-lg object-cover flex-shrink-0 w-full h-[547px]"
+                className="shadow-lg object-cover flex-shrink-0 w-full h-[547px]"
               />
             </SwiperSlide>
           ))}

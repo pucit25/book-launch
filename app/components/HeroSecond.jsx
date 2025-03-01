@@ -70,7 +70,7 @@ export default function HeroSecond() {
           alt="International Trade and Carriage of Goods by Sea"
           width={368}
           height={547}
-          className="rounded-lg shadow-lg"
+          className="shadow-lg"
         />
       </motion.div>
     </section>

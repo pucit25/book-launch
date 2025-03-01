@@ -19,7 +19,7 @@ export default function About() {
             alt="Mfon Ekong Usoro"
             width={400}
             height={500}
-            className="rounded-lg shadow-lg object-cover w-full h-auto"
+            className="shadow-lg object-cover w-full h-auto"
           />
         </motion.div>
 

@@ -10,7 +10,7 @@ const Image = lazy(() => import("next/image"));
 
 const books = [
   { id: 1, src: "/assets/mfon-usoro-book-cover.webp", alt: "Book Cover 1" },
-  { id: 2, src: "/assets/mfon-usoro-book-cover-2.png", alt: "Book Cover 2" },
+  { id: 2, src: "/assets/mfon-usoro-book-cover-2.webp", alt: "Book Cover 2" },
 ];
 
 export default function Hero() {

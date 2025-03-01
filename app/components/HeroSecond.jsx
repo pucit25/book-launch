@@ -66,7 +66,7 @@ export default function HeroSecond() {
         className="w-full md:w-[373px] mt-10 md:mt-0 flex justify-center"
       >
         <Image
-          src="/assets/mfon-usoro-book-cover-2.png"
+          src="/assets/mfon-usoro-book-cover-2.webp"
           alt="International Trade and Carriage of Goods by Sea"
           width={368}
           height={547}

@@ -53,7 +53,7 @@ export default function About() {
       >
         <Suspense fallback={<div className="w-[750px] h-[500px] bg-gray-200" />}>
           <Image
-            src="/assets/author.png"
+            src="/assets/author.webp"
             alt="Mfon Usoro"
             width={750}
             height={500}

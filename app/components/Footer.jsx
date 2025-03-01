@@ -34,6 +34,7 @@ export default function Footer() {
         <div className="pt-6 space-y-2 md:pl-6">
           <h3 className="text-[#54504D] font-medium text-lg mb-2">Get In Touch</h3>
           <p className="text-[#1B1816]">info@paulusoro.com</p>
+          <p className="text-[#1B1816]">08025011388</p>
         </div>
       </div>
 

@@ -38,9 +38,9 @@ export const metadata = {
     "UCP",
     "Carriage of goods by sea",
   ].join(", "), // Meta keyword best practice
-  authors: [{ name: "Mfon Usoro" }],
+  authors: [{ name: "Mfon Usoro, Mfon Ekong Usoro" }],
   openGraph: {
-    title: "International Trade & Carriage of Goods by Sea - Mfon Usoro",
+    title: "International Trade & Carriage of Goods by Sea - Mfon Usoro, Mfon Ekong Usoro, ",
     description:
       "Dive into Mfon Usoro’s latest book on maritime law, financing trade, and shipping regulations.",
     url: "https://mfonusorobooks.com",

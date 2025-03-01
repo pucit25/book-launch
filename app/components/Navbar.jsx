@@ -20,13 +20,13 @@ export default function Navbar() {
     <nav className="bg-[#FDF7F3] h-[60px] flex items-center justify-between fixed top-0 left-0 w-full z-[9999] shadow-md">
       {/* Logo */}
       <h1 className="text-[#1B1816] text-[25px] font-normal tracking-wide border border-l-0 border-[#E0E0E0] border-opacity-10 p-[11px] z-50">
-        MU
+        <a href="/">MU</a>
       </h1>
 
       {/* Desktop Nav Links */}
       <div className="hidden md:flex items-center flex-grow justify-end">
         <div className="flex border border-[#E0E0E0] overflow-hidden w-[600px]">
-          {["About", "Books", "Events", "Contact Us"].map((name, index) => (
+          {["About", "Books", "Publications", "Events", "Contact Us"].map((name, index) => (
             <Link
               key={index}
               href={`/${name.toLowerCase().replace(/\s/g, "")}`}
@@ -56,7 +56,7 @@ export default function Navbar() {
           isOpen ? "translate-x-0" : "-translate-x-full"
         }`}
       >
-        {["About", "Books", "Events", "Contact Us"].map((name, index) => (
+        {["About", "Books", "Publications", "Events", "Contact Us"].map((name, index) => (
           <Link
             key={index}
             href={`/${name.toLowerCase().replace(/\s/g, "")}`}

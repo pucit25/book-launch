@@ -1,11 +1,16 @@
 "use client";
-
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { Swiper, SwiperSlide } from "swiper/react";
+import { SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
+
+import dynamic from "next/dynamic";
+
+// Fix: Import Swiper's default export
+const Swiper = dynamic(() => import("swiper/react").then((mod) => mod.Swiper), { ssr: false });
+
 
 const books = [
   { id: 1, src: "/assets/mfon-usoro-book-cover.webp", alt: "Book Cover 1" },
@@ -33,11 +38,12 @@ export default function Hero() {
           {books.map((book) => (
             <SwiperSlide key={book.id} className="flex justify-center">
               <Image
-                src={book.src}
-                alt={book.alt}
+                src="/assets/mfon-usoro-book-cover.webp"
+                alt="Book Cover 1"
                 width={368}
                 height={547}
-                priority // Forces LCP element to load faster
+                priority
+                fetchPriority="high"
                 className="shadow-lg rounded-lg object-cover flex-shrink-0 w-full h-[547px]"
               />
             </SwiperSlide>
